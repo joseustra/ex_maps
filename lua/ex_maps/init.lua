@@ -31,7 +31,7 @@ local function atom_to_string(_)
 end
 
 local function string_to_atom(_)
-	local pattern = '\"(%w+)\"(%s=>)'
+	local pattern = '\"(.+)\"(%s=>)'
 	local replacement = "%1:"
 
 	replace(pattern, replacement)
