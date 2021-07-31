@@ -24,8 +24,8 @@ local function replace(pattern, replacement)
 end
 
 local function atom_to_string(_)
-	local pattern = '(%w+):'
-	local replacement =	"\"%1\" =>"
+	local pattern = '(%s+)(.+):'
+	local replacement =	"%1\"%2\" =>"
 
 	replace(pattern, replacement)
 end
@@ -36,7 +36,6 @@ local function string_to_atom(_)
 
 	replace(pattern, replacement)
 end
-
 
 return {
 	atom_to_string = atom_to_string,
