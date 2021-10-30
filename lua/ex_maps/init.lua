@@ -8,8 +8,6 @@ M.config = {
   mapping = "mtt",
 }
 
-local bufnr = vim.api.nvim_get_current_buf()
-
 local atom_pattern = "([%w|_]*):"
 local string_pattern = '"([%w|%p]*)" =>'
 
@@ -52,6 +50,7 @@ end
 M.toggle = function()
   local node = get_node()
   local start_row, start_col, end_row, end_col = node:range()
+  local bufnr = vim.api.nvim_get_current_buf()
 
   local text = replace(ts_utils.get_node_text(node, bufnr))
   api.nvim_buf_set_text(bufnr, start_row, start_col, end_row, end_col, text)
