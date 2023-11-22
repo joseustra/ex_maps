@@ -23,7 +23,12 @@ local function string_to_atom(line)
   return string.gsub(line, string_pattern, replacement)
 end
 
-local function replace(lines)
+local function replace(text)
+  local lines = {}
+  for line in text:gmatch("[^\n]+") do
+    table.insert(lines, line)
+  end
+
   for i, line in ipairs(lines) do
     if line:match(atom_pattern) then
       lines[i] = atom_to_string(line)
@@ -52,7 +57,9 @@ M.toggle = function()
   local start_row, start_col, end_row, end_col = node:range()
   local bufnr = vim.api.nvim_get_current_buf()
 
-  local text = replace(ts_utils.get_node_text(node, bufnr))
+  local get_node_text = vim.treesitter.get_node_text or vim.treesitter.query.get_node_text
+  local text = replace(get_node_text(node, bufnr))
+
   api.nvim_buf_set_text(bufnr, start_row, start_col, end_row, end_col, text)
 end
 
