@@ -1,5 +1,8 @@
 # ExMaps
 
+
+![ex_maps_logo](https://github.com/joseustra/ex_maps/assets/58203/419f3c3d-5e31-4d2f-863c-e85be5ced6f0)
+
 Converts Elixir maps from atom to string and vice versa.
 
 It uses tree-sitter to find the Map.
