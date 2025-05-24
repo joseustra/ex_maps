@@ -24,7 +24,7 @@ local function string_to_atom(line)
       return capture .. ":"
     else
       -- Use quoted atom syntax for invalid atom names (contains hyphens, spaces, etc.)
-      return ':"' .. capture .. '"'
+      return '"' .. capture .. '":'
     end
   end)
 
@@ -35,7 +35,7 @@ local function string_to_atom(line)
       return capture .. ": "
     else
       -- Use quoted atom syntax for invalid atom names (contains hyphens, spaces, etc.)
-      return ':"' .. capture .. '": '
+      return '"' .. capture .. '": '
     end
   end)
 
