@@ -193,8 +193,6 @@ M.toggle = function()
     vim.notify("ex_maps: Failed to apply changes", vim.log.levels.ERROR)
     return
   end
-
-  vim.notify("ex_maps: Map syntax converted successfully", vim.log.levels.INFO)
 end
 
 function M.setup(user_opts)
