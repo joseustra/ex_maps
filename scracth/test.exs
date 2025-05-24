@@ -3,18 +3,18 @@ defmodule Test do
     %{
       name: "John",
       email: "john.doe@email.com",
-      address:  [
+      address: [
         %{
           type: "main",
           line1: "12, code ave",
           line2: "room 42",
-          zip_code: "1234"
+          "zip-code": "1234"
         },
         %{
           type: "billing",
           line1: "14, code ave",
           line2: "room 44",
-          zip_code: "1234"
+          "zip-code": "1234"
         }
       ]
     }
